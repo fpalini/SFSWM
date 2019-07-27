@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+group 'it.uniroma1.dss'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+shadowJar {
+    zip64 true
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile 'org.apache.spark:spark-core_2.11:2.2.1'
+    compile 'com.github.umbfer:fastdoop:spark_support-SNAPSHOT'
+    compile 'it.unimi.dsi:fastutil:8.1.0'
+}
