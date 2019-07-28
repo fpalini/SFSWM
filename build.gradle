@@ -16,6 +16,12 @@ sourceSets {
     }
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'sfswm.Main'
+    }
+}
+
 shadowJar {
     zip64 true
 }
